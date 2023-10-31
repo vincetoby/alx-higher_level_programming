@@ -6,4 +6,3 @@ def uppercase(str):
             chara = chara - 32
         print("{}".format(chr(chara)), end="")
     print()
-
