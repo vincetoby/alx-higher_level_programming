@@ -2,11 +2,12 @@
 #include <stdlib.h>
 
 /**
- * insert_node - inserts node in sorted list
- * @head: address of head pointer
- * @number: number to insert
- * Return: inserted node
+ * insert_node - inserts a node in a sorted list
+ * @head: pointer to first node
+ * @number: the value to insert
+ * Return: the new inserted node
  */
+
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *node = *head, *temp;
@@ -29,7 +30,7 @@ listint_t *insert_node(listint_t **head, int number)
 		if (!node->next || temp->n < node->next->n)
 		{
 			temp->next = node->next;
-			node-> next = new;
+			node-> next = temp;
 			return (node);
 		}
 		node = node->next;
