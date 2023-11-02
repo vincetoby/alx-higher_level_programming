@@ -40,3 +40,39 @@
     Make sure you are running your code in Python3.8.x (hidden_4.pyc has been compiled with this version)
 
 5. 5-variable_load.py: a program that imports the variable a from the file variable_load_5.py and prints its value.
+
+6. 100-my_calculator.py: a program that imports all functions from the file calculator_1.py and handles basic operations.
+
+    Usage: ./100-my_calculator.py a operator b
+        If the number of arguments is not 3, your program has to:
+            print Usage: ./100-my_calculator.py <a> <operator> <b> followed with a new line
+            exit with the value 1
+        operator can be:
+            + for addition
+            - for subtraction
+            * for multiplication
+            / for division
+        If the operator is not one of the above:
+            print Unknown operator. Available operators: +, -, * and / followed with a new line
+            exit with the value 1
+        You can cast a and b into integers by using int() (you can assume that all arguments will be castable into integers)
+        The result should be printed like this: <a> <operator> <b> = <result>, followed by a new line
+    You are not allowed to use * for importing or __import__
+    Your code should not be executed when imported
+
+
+7. 101-easy_print.py: a program that prints #pythoniscool, followed by a new line, in the standard output.
+	here i created a script and defined a fuction that prints the string, in the script , i utilized the function.
+	then created another script and imported the function which printed with using print again.
+
+8. 2-args.py: a program that prints the number of and the list of its arguments.
+
+    The output should be:
+        Number of argument(s) followed by argument (if number is one) or arguments (otherwise), followed by
+        : (or . if no arguments were passed) followed by
+        a new line, followed by (if at least one argument),
+        one line per argument:
+            the position of the argument (starting at 1) followed by :, followed by the argument value and a new line
+    Your code should not be executed when imported
+
+9. 
