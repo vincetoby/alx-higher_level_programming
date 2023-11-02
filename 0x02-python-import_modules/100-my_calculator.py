@@ -26,5 +26,3 @@ def calc(argv):
 if __name__ == "__main__":
     import sys
     calc(sys.argv)
-
-
