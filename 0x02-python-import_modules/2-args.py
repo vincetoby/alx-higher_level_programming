@@ -9,10 +9,10 @@ def print4me(argv):
             print("{:d} argument:".format(length))
         else:
             print("{:d} arguments:".format(length))
-        indx = 1
-        while indx <= length:
-            print("{:d}: {:s}".format(indx, argv[indx]))
-            indx = indx + 1
+        i = 1
+        while i <= length:
+            print("{:d}: {:s}".format(i, argv[i]))
+            i = i + 1
 if __name__ == "__main__":
     import sys
     print4me(sys.argv)
