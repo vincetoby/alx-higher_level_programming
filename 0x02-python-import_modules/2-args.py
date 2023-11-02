@@ -13,7 +13,6 @@ def print4me(argv):
         while indx <= length:
             print("{:d}: {:s}".format(indx, argv[indx]))
             indx = indx + 1
-
 if __name__ == "__main__":
     import sys
     print4me(sys.argv)
