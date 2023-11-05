@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 {
 	const listint_t *curr;
 	int length = 0, i = 0, j, buff[20000];
-	
+
 	if (*head == NULL)
 		return (1);
 	curr = *head;
