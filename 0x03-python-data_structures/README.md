@@ -34,4 +34,19 @@
     You are not allowed to cast integers into strings
     You have to use str.format() to print integers
 
-5. 
+5. 4-new_in_list.py: a function that replaces an element in a list at a specific position without modifying the original list (like in C).
+
+    Prototype: def new_in_list(my_list, idx, element):
+    If idx is negative, the function should return a copy of the original list
+    If idx is out of range (> of number of element in my_list), the function should return a copy of the original list
+    You are not allowed to import any module
+    You are not allowed to use try/except
+
+6. 5-no_c.py: a function that removes all characters c and C from a string.
+
+    Prototype: def no_c(my_string):
+    The function should return the new string
+    You are not allowed to import any module
+    You are not allowed to use str.replace()
+
+7.  
