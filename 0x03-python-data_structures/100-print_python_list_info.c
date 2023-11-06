@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <Python.h>
+#include "python.h"
+
 /**
  * print_python_list_info - print list
  * @p: object
