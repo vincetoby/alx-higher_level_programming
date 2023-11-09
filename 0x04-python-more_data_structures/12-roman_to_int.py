@@ -9,9 +9,12 @@ thousands = ["MMM", "MM", "M"]
 
 
 def digitcheck(strg, fig):
+    max_match = ""
     for i in fig:
-        if i in strg:
-            return list(reversed(fig)).index(i) + 1
+        if i in strg and len(i) > len(max_match):
+            max_match = i
+        if max_match:
+            return list(reversed(fig)).index(max_match) + 1
     return -1
 
 
