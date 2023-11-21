@@ -12,7 +12,7 @@ class Square:
             position: A tuple of the position of the square.
 
         Raises:
-            TypeError: Size is not an integer or position is not a tuple(integers)
+            TypeError: Size is not an integer or position isn't a tuple(ints)
             ValueError: Size is negative(<0)
         """
         if not isinstance(size, int):
