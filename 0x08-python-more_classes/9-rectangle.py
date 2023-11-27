@@ -146,7 +146,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Compares the area of two instances and returns the larger.
+        """Compares the area of two instances and returns the larger of the two.
 
              Args:
                 rect_1 (Rectangle object): first instnce
@@ -168,3 +168,16 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """Returns an instance with equal sides.
+
+        Args:
+            size: int representing length of sides
+
+        Returns:
+            new instance of class with equal sides (square)
+
+        """
+        return cls(size, size)
