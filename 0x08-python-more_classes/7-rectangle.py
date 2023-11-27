@@ -16,6 +16,7 @@ class Rectangle:
                 decrements when it is deleted
     """
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
 
@@ -117,7 +118,7 @@ class Rectangle:
         str = ""
         for i in range(self.__height):
             for j in range(self.width):
-                str = str + '#'
+                str = str + "{}".format(self.print_symbol)
 
             if self.__width != 0 and i < self.__height - 1:
                 str = str + '\n'
