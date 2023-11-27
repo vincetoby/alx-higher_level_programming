@@ -117,6 +117,7 @@ def arrange_format(candi):
                     alx[a][i].append(j)
     return alx
 
+
 # initialize candi list with first column of 0's
 candi = []
 candi.append(column_generate())
