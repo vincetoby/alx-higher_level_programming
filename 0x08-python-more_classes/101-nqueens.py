@@ -1,22 +1,15 @@
 #!/usr/bin/python3
-"""101-nqueens finds all possible solutions the N queens puzzle, including
+"""101-nqueens finds every possible solution to the N queens puzzle, including
 translations and reflections.
-
-Attempted virtual backtracking without recursion. In local tests process will
-start to slow down visibly for N > 8, and is successful up to N = 11 but
-will be killed if used for N > 11. Recursion could allow for a lighter weight
-process, but it's not yet apparent to this student how to retain a record of
-which solutions are already derived with that method.
 
 Attributes:
     N (int): base number of queens, and length of board side in piece positions
-    candidates (list) of (list) of (list) of (int): list of all successful
+    candi (list) of (list) of (list) of (int): list of all successful
         solutions for given amount of columns checked
-
 """
 from sys import argv
 
-if len(argv) is not 2:
+if len(argv) != 2:
     print('Usage: nqueens N')
     exit(1)
 
@@ -36,11 +29,10 @@ def column_generate(board_surf=[]):
     queen arrangements in that column.
 
     Args:
-        board (list) of (list) of (int): 2D list of ints, only as wide as
-        needed to test the rightmost column for queen conflicts.
+        board_surf: 2D list of ints
 
     Returns:
-        modified 2D list
+        returns the modified 2D list
 
     """
     if len(board_surf):
@@ -53,32 +45,30 @@ def column_generate(board_surf=[]):
 
 
 def queen_adder(board_surf, the_row, column):
-    """Sets "queen," or 1, to coordinates given in board.
+    """Sets "queen" or 1, to coordinates given in board.
 
     Args:
-        board (list) of (list) of (int): 2D list of ints, only as wide as
+        board_surf: 2D list of ints, only as wide as
             needed to test the rightmost column for queen conflicts.
-        row (int): first dimension index
-        col (int): second dimension index
+        the_row: an integer, first dimension index
+        column: an int as well, second dimension index
 
     """
     board_surf[the_row][column] = 1
 
 
 def new_queen(board_surf, the_row, column):
-    """For the board given, checks that for a new queen placed in the rightmost
-    column, there are no other "queen"s, or 1 values, in the martix to the
+    """this checks that for a new queen(1) placed in the rightmost
+    column, there are no other "queen's", or 1 values, in the martix to the
     left, and diagonally up-left and down-left.
 
     Args:
-        board (list) of (list) of (int): 2D list of ints, only as wide as
-            needed to test the rightmost column for queen conflicts.
-        row (int): first dimension index
-        col (int): second dimension index
+        board_surf: 2D list of ints
+        the_row (integer): first dimension index
+        column (integer): second dimension index
 
     Returns:
-        True if no left side conflicts found for new queen, or False if a
-    conflict is found.
+        True if no  conflicts is found for new queen, False otherwise
 
     """
     a = the_row
@@ -86,14 +76,14 @@ def new_queen(board_surf, the_row, column):
 
     for i in range(1, N):
         if (b - i) >= 0:
-            # check up-left diagonal
+            # checks up-left diagonal
             if (a - i) >= 0:
                 if board_surf[a - i][b - i]:
                     return False
-            # check left
+            # checks left
             if board_surf[a][b - i]:
                 return False
-            # check down-left diagonal
+            # checks down-left diagonal
             if (a + i) < N:
                 if board_surf[a + i][b - i]:
                     return False
@@ -101,19 +91,19 @@ def new_queen(board_surf, the_row, column):
 
 
 def arrange_format(candi):
-    """Converts a board (matrix of 1 and 0) into a series of row/column
-    indicies of each queen/1.
+    """Converts a board (which is a matrix of 1 and 0) series of row/column
+    indices of each queen(1).
 
     Args:
-    candidates (list) of (list) of (list) of (int): list of all successful
-        solutions for amount of columns last checked
+        candi: list of all successful solutions for
+            amount of columns last checked
 
     Attributes:
-        holberton (list) of (list) of (int): each member list contains the row
+        alx: each member list contains the row
     column number for each queen found
 
     Returns:
-        holberton, the list of coordinates
+        alx, list containing the coordinates
 
     """
     alx = []
@@ -127,33 +117,33 @@ def arrange_format(candi):
                     alx[a][i].append(j)
     return alx
 
-# init candidates list with first column of 0s
+# initialize candi list with first column of 0's
 candi = []
 candi.append(column_generate())
 
-# proceed column by column, testing the rightmost
+# move column by column, testing the rightmost
 for column in range(N):
-    # start a new generation of the candidate list for every round of testing
+    # start a new gen of the candi list for every round of testing
     new_candi = []
-    # test each candidate from previous round, at current column
+    # test each candi from prev round, at the current column
     for matrix in candi:
-        # for every row in that candidate's rightmost column
+        # for every row in that candi's right-most column
         for the_row in range(N):
-            # are there any conflicts in placing a queen at those coordinates?
+            # check for conflicts
             if new_queen(matrix, the_row, column):
-                # no? then create a "child" (copy) of that candidate
+                # if no, create a copy of that candi
                 tempo = [line[:] for line in matrix]
                 # place a queen in that position
                 queen_adder(tempo, the_row, column)
                 # and unless you're in the last round of testing,
                 if column < N - 1:
-                    # add a new column of 0s on the right for the next round
+                    # add new column of 0's on the right for the next round
                     column_generate(tempo)
                 # add that new candidate to this round's list of successes
                 new_candi.append(tempo)
-    # when finished with the round, discard the "parent" candidates
+    # when finished with the round, discard the "parent" candi
     candi = new_candi
 
 # format results to match assignment output
-for item in arrange_format(candi):
-    print(item)
+for result in arrange_format(candi):
+    print(result)
