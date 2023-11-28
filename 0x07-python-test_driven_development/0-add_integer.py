@@ -1,10 +1,5 @@
 #!/usr/bin/python3
-"""defines a func that adds ints"""
-
-
-def add_integer(a, b=98):
-    """adds two integers
-
+"""defines a func that adds ints
         Args:
             a: first int/float
             b: second int/float
@@ -15,7 +10,11 @@ def add_integer(a, b=98):
         Return:
             value of addition of a and b
 
-    """
+"""
+
+
+def add_integer(a, b=98):
+    """adds two integers"""
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError("a must be an integer")
     if not isinstance(b, int) and not isinstance(b, float):

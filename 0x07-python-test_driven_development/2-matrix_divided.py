@@ -1,11 +1,6 @@
 #!/usr/bin/python3
-"""defines a func for  matrix division"""
-
-
-def matrix_divided(matrix, div):
-    """divides every element of matrix
-
-        Args:
+"""defines a func for  matrix division
+         Args:
             matrix(list of lists): list containing elements to divide
             div(float):divisor
 
@@ -18,7 +13,11 @@ def matrix_divided(matrix, div):
         Return:
             a new matrix with every element divided
 
-    """
+"""
+
+
+def matrix_divided(matrix, div):
+    """divides every element of matrix"""
 
     errrMsg = "matrix must be a matrix (list of lists) of integers/floats"
     if not matrix:
