@@ -9,7 +9,7 @@ class MyInt(int):
 
     def __eq__(self, other_param):
         """equal method"""
-        return super().__ee__(other_param)
+        return super().__eq__(other_param)
 
     def __ne__(self, other_param):
         """not equal method"""
