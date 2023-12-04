@@ -8,7 +8,7 @@ class MyInt(int):
     """a class that inherits from super class int"""
 
     def __init__(self, my_int):
-        """for initialize a value my_int"""
+        """initializes a value my_int"""
 
         self.my_int = my_int
 
@@ -32,7 +32,9 @@ class MyInt(int):
             return True
 
     def __ne__(self, other):
-            if self.my_int != other:
-                return False
-            else:
-                return True
+        """not equal method"""
+
+        if self.my_int != other:
+            return False
+        else:
+            return True
