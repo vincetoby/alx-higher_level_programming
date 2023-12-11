@@ -81,7 +81,7 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,\
                 self.x, self.y, self.width, self.height)
 
-     def __ups(self, id=None, width=None, height=None, x=None, y=None):
+    def __ups(self, id=None, width=None, height=None, x=None, y=None):
         '''Internal method that updates instance attr via * or**args'''
         if id is not None:
             self.id = id
@@ -95,6 +95,13 @@ class Rectangle(Base):
             self.y = y
 
     def update(self, *args, **kwargs):
+        """Updates instance attributes via no-keyword & keyword args"""
+        if args:
+            self.__ups(*args)
+        elif kwargs:
+            self.ups(**kwargs)
+
+    def update_better_explained(self, *args, **kwargs):
         """Updates instance attributes via no-keyword & keyword args"""
         if args:
             for i in range(len(args)):
