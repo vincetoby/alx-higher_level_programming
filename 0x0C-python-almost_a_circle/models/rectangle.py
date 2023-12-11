@@ -73,9 +73,10 @@ class Rectangle(Base):
 
     def display(self):
         """function that displays the rect with '#'"""
-        print(('#' * self.width + '\n') * self.height, end="")
+        print('\n' * self.y + (' ' * self.x + '#' * self.width + '\n')\
+                * self.height, end="")
 
     def __str__(self):
         """recturns info of rect"""
-        return "[{}] ({}) {}/{} - {}/{}".format(type(self.__name__, self.id,\
+        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,\
                 self.x, self.y, self.width, self.height)
