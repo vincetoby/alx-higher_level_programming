@@ -100,7 +100,7 @@ class Rectangle(Base):
             self.__ups(*args)
         elif kwargs:
             self.ups(**kwargs)
-
+    
     def update_better_explained(self, *args, **kwargs):
         """Updates instance attributes via no-keyword & keyword args"""
         if args:
