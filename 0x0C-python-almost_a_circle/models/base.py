@@ -36,15 +36,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-         """Converts a JSON-formatted string to a list of dictionaries.
-
-            Args:
-                json_string (str): A JSON-formatted string to be converted
-
-            Returns:
-                list: A list of dictionaries. Returns an empty
-                list if the input string is None or empty.
-        """
+        """Converts a JSON-formatted string to a list of dictionaries"""
         if json_string is None or not json_string:
             return []
         return loads(json_string)
@@ -79,7 +71,7 @@ class Base:
             newf = Square(1)
         else:
             newf = None
-        new.update(**dictionary)
+        newf.update(**dictionary)
         return newf
 
     @classmethod
