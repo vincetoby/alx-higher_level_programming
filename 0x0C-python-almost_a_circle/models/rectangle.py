@@ -44,7 +44,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """x setter"""
-        self.vcheck_int("x", value)
+        self.check_int("x", value)
         self.__x = value
 
     @property
@@ -69,8 +69,13 @@ class Rectangle(Base):
 
     def area(self):
         """area of the rectangle"""
-        return self.__height * self.__width
+        return self.height * self.width
 
     def display(self):
         """function that displays the rect with '#'"""
-        print("('#' * self.__width) * self.__height)
+        print(('#' * self.width + '\n') * self.height, end="")
+
+    def __str__(self):
+        """recturns info of rect"""
+        return "[{}] ({}) {}/{} - {}/{}".format(type(self.__name__, self.id,\
+                self.x, self.y, self.width, self.height)
