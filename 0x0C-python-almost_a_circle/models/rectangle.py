@@ -66,3 +66,11 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0".format(name))
         elif not fg and value <= 0:
             raise ValueError("{} must be > 0".format(name))
+
+    def area(self):
+        """area of the rectangle"""
+        return self.__height * self.__width
+
+    def display(self):
+        """function that displays the rect with '#'"""
+        print("('#' * self.__width) * self.__height)
