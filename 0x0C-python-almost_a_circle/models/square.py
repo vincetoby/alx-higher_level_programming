@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """class square that inherits from rectangle
 """
+from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """class square"""
@@ -25,14 +27,12 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    def __ups(self, id=None, width=None, height=None, x=None, y=None):
+    def __ups(self, id=None, size=None, x=None, y=None):
         '''Internal method that updates instance attr via * or**args'''
         if id is not None:
             self.id = id
-        if width is not None:
-            self.width = width
-        if height is not None:
-            self.height = height
+        if size is not None:
+            self.size = size
         if x is not None:
             self.x = x
         if y is not None:
@@ -43,6 +43,8 @@ class Square(Rectangle):
         if args:
             self.__ups(*args)
         elif kwargs:
-            self.ups(**kwargs)
+            self.__ups(**kwargs)
 
-
+    def to_dictionary(self):
+        return {"id": self.id, "size": self.width,
+                "x": self.x, "y": self.y}

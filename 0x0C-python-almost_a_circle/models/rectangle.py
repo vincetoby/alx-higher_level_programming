@@ -99,31 +99,9 @@ class Rectangle(Base):
         if args:
             self.__ups(*args)
         elif kwargs:
-            self.ups(**kwargs)
-    
-    def update_better_explained(self, *args, **kwargs):
-        """Updates instance attributes via no-keyword & keyword args"""
-        if args:
-            for i in range(len(args)):
-                if i == 0:
-                    self.id = args[i]
-                elif i == 1:
-                    self.__width = args[i]
-                elif i == 2:
-                    self.__height = args[i]
-                elif i == 3:
-                    self.__x = args[i]
-                elif i == 4:
-                    self.__y = args[i]
-        elif kwargs:
-            for key in kwargs:
-                if key == "id":
-                    self.id = kwargs[key]
-                elif key == "width":
-                    self.__width = kwargs[key]
-                elif key == "height":
-                    self.__height = kwargs[key]
-                elif key == "x":
-                    self.__x = kwargs[key]
-                elif key == "y":
-                    self.__y = kwargs[key]
+            self.__ups(**kwargs)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        return {"id": self.id, "width": self.__width, "height": self.__height
+                "x": self.__x, "y": self.__y}
