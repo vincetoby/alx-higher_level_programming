@@ -17,7 +17,7 @@ class Base:
             Base.__nb_objects += 1
             self.id =  Base.__nb_objects
 
-     @staticmethod
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Converts a list of dictionaries to a JSON-formatted string.
 
@@ -60,7 +60,7 @@ class Base:
         with open(file, "r", encoding="utf-8") as f:
             return [cls.create(**d) for d in cls.from_json_string(f.read())]
 
-     @classmethod
+    @classmethod
     def create(cls, **dictionary):
         """Loads instance from dictionary"""
         from models.rectangle import Rectangle
