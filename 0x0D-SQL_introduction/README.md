@@ -281,7 +281,7 @@ guillaume@ubuntu:~/$
 ### 103-max_state.sql:
 a script that displays the max temperature of each state (ordered by State name).
 
-</pre></code>
+<pre><code>
 guillaume@ubuntu:~/$ cat 103-max_state.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password: 
 state   max_temp
