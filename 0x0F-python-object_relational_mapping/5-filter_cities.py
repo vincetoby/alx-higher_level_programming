@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-# this displays all cities of a given state from the
-# state`s table of the database hbtn_0e_4_usa.
-# Safe from SQL injections.
-# Usage: ./5-filter_cities.py <mysql username> \
-#                             <mysql password> \
-#                             <database name> \
-#                             <state name searched>
+"""this displays all cities of a given state from the
+    state`s table of the database hbtn_0e_4_usa.
+"""
 import sys
 import MySQLdb
+
 
 if __name__ == "__main__":
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
