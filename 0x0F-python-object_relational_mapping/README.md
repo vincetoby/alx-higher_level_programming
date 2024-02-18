@@ -146,7 +146,7 @@ for all files. Provided by ALX.
     * Identical to the `City` class defined in [model_city.py](./model_city.py).
   * [100-relationship_states_cities.py](./100-relationship_states_cities.py):
   Python script that uses SQLAlchemy to add the `State` "California" with `City`
-  "San Francisco" to the database `hbtn_0e_100_usa`.
+  "San Francisco" to the database `hbtn_0e_100_usa` .
   * Usage: `./100-relationship_states_cities.py <mysql username>
   <mysql password> <database name>`.
   * Uses the `cities` relationship for all `State` objects.
